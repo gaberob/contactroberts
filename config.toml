@@ -1,5 +1,5 @@
-base_url = "https://notthebe.ee/"
-title = "Wolfgang's Blog"
+base_url = "https://contactroberts.com/"
+title = "Gabe's Blog"
 compile_sass = true
 build_search_index = true
 generate_feed = true
@@ -11,4 +11,4 @@ highlight_code = true
 highlight_theme = "css"
 
 [extra]
-author = "Wolfgang"
+author = "Gabe"
