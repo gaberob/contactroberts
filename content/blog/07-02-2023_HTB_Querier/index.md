@@ -1,4 +1,7 @@
-+++ title = "HTB Querier Writeup" +++
++++
+title = "HTB Querier Writeup" 
+template = "blog-page.html"
++++
 
 # HTB Querier Writeup - 7-1-2023
 
