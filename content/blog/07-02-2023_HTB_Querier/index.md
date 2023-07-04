@@ -262,7 +262,7 @@ File      : C:\ProgramData\Microsoft\Group
 
 Aside from the administrator password just being, there... in the PowerUp from a GPP file there are also some other avenues to explore like token impersonation or Potato attacks because of SeImpersonate. I tried the reported service abuse but never got it working. The DLL hijacking will not work unless we can start and stop the service.
 
-wmiexec.py was what worked to ultimately give us a root shell.
+wmiexec.py was what worked to ultimately give us a administrator shell.
 
 ```bash
 wmiexec.py Administrator:'MyUnclesAreMarioAndLuigi!!1!'@10.10.10.125
