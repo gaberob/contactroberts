@@ -367,7 +367,7 @@ Or, not!
 
 These credentials are encoded.
 
-I put them in cyberchef and ran dome magic on them, they were on b64.
+I put them in cyberchef and run some magic on them, they were on b64.
 
 ```bash
 backup@spookysec.local:backup2517860
