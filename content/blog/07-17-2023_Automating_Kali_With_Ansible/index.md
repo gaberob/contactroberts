@@ -1,6 +1,6 @@
 +++
 title = "Automating Kali Configuration with Ansible"
-Date = 2023-07-17
+date = 2023-07-17
 +++
 # Automating the configuration of new Kali VM's
 
